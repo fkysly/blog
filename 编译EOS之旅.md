@@ -15,3 +15,7 @@ ubuntu 默认也有 openssl ，但是没有在 /usr 下面发现相关的 includ
 ### 指定 clang
 
 EOS 要求 LLVM 4.0 以上，肯定是要自己安装一个 clang，但是问题是 cmake 的时候，不会提示你到底默认编译器是啥参数配置，啥情况。直接 cmake . ，大概 30% 左右就报错了。于是赶紧搜 issue ，换成了 cmake . -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_STANDARD=14 , 一次编译通过。
+
+### config.ini
+
+README 里面提到 config.ini ，其实就在那个 data-dir 里面。。。
